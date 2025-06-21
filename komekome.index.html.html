@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>米米部 公式ホームページ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfaf6;
+        }
+        .font-mochiy {
+            font-family: 'Mochiy Pop One', sans-serif;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #6B8E23;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .main-nav-button {
+            @apply px-3 py-2 rounded-md text-sm sm:text-base font-medium text-gray-600 hover:bg-[#e9e4dd] hover:text-[#6B8E23] transition-all duration-200;
+        }
+        .main-nav-button.active {
+            @apply bg-[#6B8E23] text-white;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .sns-icon:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-[#fdfaf6]">
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-10 h-10 text-[#6B8E23]">
+                        <path fill="#FFF5E1" d="M50,9.9C27.9,9.9,9.9,27.9,9.9,50S27.9,90.1,50,90.1s40.1-17.9,40.1-40.1S72.1,9.9,50,9.9z"/>
+                        <path fill="#4A2E00" d="M35.5,42.4c-4.1,0-7.4-3.3-7.4-7.4s3.3-7.4,7.4-7.4s7.4,3.3,7.4,7.4S39.6,42.4,35.5,42.4z M64.5,42.4 c-4.1,0-7.4-3.3-7.4-7.4s3.3-7.4,7.4-7.4s7.4,3.3,7.4,7.4S68.6,42.4,64.5,42.4z"/>
+                        <path fill="#4A2E00" d="M50,77.5c-14.9,0-27.7-8-32.2-19.4c-0.6-1.5,0.1-3.2,1.6-3.8c1.5-0.6,3.2,0.1,3.8,1.6 C26.3,64.3,37.3,70,50,70s23.7-5.7,26.8-14.1c0.6-1.5,2.3-2.2,3.8-1.6c1.5,0.6,2.2,2.3,1.6,3.8C77.7,69.5,64.9,77.5,50,77.5z"/>
+                        <path fill="#6B8E23" d="M48.2,12.2c0,0-5.2-1.2-8.1,2.9c-2.3,3.2-1.3,7.4-1.3,7.4s1.7,0.3,3.6-1.7c1.7-1.8,2.7-4,2.7-4 S48.2,12.2,48.2,12.2z"/>
+                    </svg>
+                    <h1 class="font-mochiy text-xl sm:text-2xl text-[#6B8E23]">米米部</h1>
+                </div>
+                <nav class="flex items-center space-x-1 sm:space-x-2">
+                    <button class="main-nav-button active" data-target="home">ホーム</button>
+                    <button class="main-nav-button" data-target="guide">そだてかた</button>
+                    <button class="main-nav-button" data-target="diary">観察日記</button>
+                    <button class="main-nav-button" data-target="ai-help">AIそうだん</button>
+                    <button class="main-nav-button" data-target="store">キット購入</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto p-4 sm:p-6 md:p-8">
+        
+        <!-- Home Section -->
+        <section id="home" class="content-section active">
+            <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+                <h2 class="font-mochiy text-3xl text-gray-800 mb-4">ようこそ！『米米部』へ！</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    お米作りは、まるで部活動みたいに楽しい！<br>
+                    さあ、仲間と一緒に、最高の思い出を作ろう！
+                </p>
+                <img src="https://placehold.co/600x300/a3b86c/FFFFFF?text=米米部へようこそ！" alt="お米を育てるイメージ" class="rounded-lg mx-auto">
+                
+                <div class="mt-8 pt-6 border-t border-gray-200">
+                    <h3 class="font-mochiy text-2xl text-gray-700 mb-4">公式SNSもチェック！</h3>
+                    <p class="text-gray-500 mb-6">部員たちの活動の様子や、最新情報はこちらから！</p>
+                    <div class="flex justify-center space-x-6">
+                        <a href="#" target="_blank" class="text-gray-500 hover:text-black transition-transform duration-200 sns-icon" title="X (Twitter)"><svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                        <a href="#" target="_blank" class="text-gray-500 hover:text-pink-500 transition-transform duration-200 sns-icon" title="Instagram"><svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.792 2.792c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.792 2.792c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.792-2.792c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 012.792-2.792c.636-.247 1.363.416 2.427.465C9.53 2.013 9.884 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0-2a7 7 0 110 14 7 7 0 010-14zm4.5-1.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd"></path></svg></a>
+                        <a href="#" target="_blank" class="text-gray-500 hover:text-blue-500 transition-transform duration-200 sns-icon" title="TikTok"><svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.84-.95-6.43-2.8-1.77-2.04-2.4-4.65-1.95-7.24.41-2.36 1.82-4.44 3.82-5.73v2.8c-1.45 1.12-2.35 2.84-2.61 4.62-.23 1.57.16 3.22.9 4.54.8 1.47 2.11 2.5 3.66 2.71 1.55.21 3.12-.2 4.34-1.11.95-.71 1.64-1.71 1.9-2.86.23-1.05.28-2.14.28-3.23.01-2.31-.01-4.62-.01-6.93 0-.21.01-.42.01-.63-.01-1.02-.31-2.02-.83-2.89-.54-.89-1.28-1.65-2.16-2.26v-3.3c.91.73 1.75 1.56 2.46 2.47.62.8 1.13 1.69 1.52 2.63.18.43.34.87.48 1.32z"></path></svg></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="content-section">
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h2 class="font-mochiy text-3xl text-gray-800 mb-6 border-b-4 border-[#6B8E23] pb-2">そだてかたガイド</h2>
+                <h3 class="font-mochiy text-2xl text-gray-700 mt-6 mb-4">動画で見る</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="aspect-w-16 aspect-h-9"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen class="rounded-lg w-full h-full" title="サンプル動画1"></iframe><p class="text-sm text-center mt-1">ステップ1：種もみの準備</p></div>
+                    <div class="aspect-w-16 aspect-h-9"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen class="rounded-lg w-full h-full" title="サンプル動画2"></iframe><p class="text-sm text-center mt-1">ステップ2：芽出しと田植え</p></div>
+                </div>
+                <h3 class="font-mochiy text-2xl text-gray-700 mt-8 mb-4">写真と文章で見る</h3>
+                <div class="space-y-6">
+                    <div><h4 class="font-bold text-lg">1. 芽出し (めだし)</h4><p class="text-gray-600">種もみを水につけて、お米の赤ちゃん（芽）が出てくるのを待ちます。毎日お水をかえるのがポイント！</p></div>
+                    <div><h4 class="font-bold text-lg">2. 田植え (たうえ)</h4><p class="text-gray-600">芽が出た種もみを、キットのプランターと土にやさしく植えてあげます。</p></div>
+                    <div><h4 class="font-bold text-lg">3. 観察 (かんさつ)</h4><p class="text-gray-600">毎日お水をあげて、太陽の光をたっぷりあててあげましょう。どんどん大きくなるよ！</p></div>
+                </div>
+                <h3 class="font-mochiy text-2xl text-gray-700 mt-8 mb-4">収穫したあとは？</h3>
+                <p class="text-gray-600">お米が実ったら、はさみで収穫！お茶碗やお箸でやさしくこすると、玄米が取り出せるよ。少量だけど、自分で作ったお米の味は最高！炊きたてを塩むすびで食べるのがおすすめです。</p>
+            </div>
+        </section>
+
+        <!-- Diary Section -->
+        <section id="diary" class="content-section">
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h2 class="font-mochiy text-3xl text-gray-800 mb-6 border-b-4 border-[#3b82f6] pb-2">みんなの観察日記</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div><h3 class="font-mochiy text-xl mb-4">日記をつけよう</h3><div class="space-y-4"><div><label for="diaryDate" class="font-bold">日付:</label><input type="date" id="diaryDate" class="w-full p-2 border rounded-md"></div><div><label for="diaryPhoto" class="font-bold">写真:</label><input type="file" id="diaryPhoto" accept="image/*" class="w-full text-sm"></div><div><label for="diaryText" class="font-bold">今日のきろく:</label><textarea id="diaryText" rows="4" class="w-full p-2 border rounded-md" placeholder="芽がでたよ！"></textarea></div><button id="saveDiaryButton" class="w-full bg-[#3b82f6] text-white font-bold py-2 px-4 rounded-lg hover:bg-[#2563eb]">日記を保存する</button></div></div>
+                    <div id="diaryDisplay" class="space-y-4 max-h-96 overflow-y-auto pr-2"></div>
+                </div>
+                <button id="shareDiaryButton" class="mt-6 w-full bg-green-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-600">日記をシェアする</button>
+            </div>
+        </section>
+
+        <!-- AI Helpdesk Section -->
+        <section id="ai-help" class="content-section">
+            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg"><div class="flex justify-center items-center gap-4 mb-4"><h2 class="font-mochiy text-3xl text-gray-800">AIヘルプデスク</h2></div><div class="mb-6 border-b border-gray-200"><nav class="flex space-x-2 sm:space-x-4" aria-label="Tabs"><button id="ai-tab-help" class="ai-tab-button active">そうだん</button><button id="ai-tab-name" class="ai-tab-button">なまえ</button><button id="ai-tab-recipe" class="ai-tab-button">レシピ</button><button id="ai-tab-haiku" class="ai-tab-button">はいく</button></nav></div><div id="ai-content-help" class="ai-tab-content"><label for="question" class="block text-lg font-bold text-gray-700 mb-2">こまったことを質問してね</label><textarea id="question" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6B8E23]" placeholder="例：葉っぱが黄色くなってきたけど、どうしたらいい？"></textarea><button id="askButton" class="w-full mt-4 bg-[#6B8E23] text-white font-bold py-3 px-4 rounded-lg hover:bg-[#55711E]">コメットさんに質問する！</button></div><div id="ai-content-name" class="ai-tab-content hidden text-center"><p class="text-gray-700 mb-4">たいせつな稲にすてきな名前をつけよう！</p><button id="nameButton" class="w-full bg-[#3b82f6] text-white font-bold py-3 px-4 rounded-lg hover:bg-[#2563eb]">✨ AIにお米の名前を考えてもらう</button></div><div id="ai-content-recipe" class="ai-tab-content hidden text-center"><p class="text-gray-700 mb-4">自分で育てたお米は最高！どんな料理で食べる？</p><button id="recipeButton" class="w-full bg-[#ef4444] text-white font-bold py-3 px-4 rounded-lg hover:bg-[#dc2626]">✨ AIに家族が喜ぶレシピを考えてもらう</button></div><div id="ai-content-haiku" class="ai-tab-content hidden text-center"><p class="text-gray-700 mb-4">がんばって育てた思い出を、俳句にしてみよう！</p><button id="haikuButton" class="w-full bg-[#f97316] text-white font-bold py-3 px-4 rounded-lg hover:bg-[#ea580c]">✨ AIに収穫の俳句をよんでもらう</button></div><section id="responseSection" class="mt-8 bg-gray-50 p-6 rounded-2xl hidden"><h3 id="responseTitle" class="font-mochiy text-xl text-gray-800 mb-4">コメットさんから</h3><div id="loader" class="flex justify-center items-center hidden"><div class="loader"></div><p class="ml-4 text-gray-600">コメットさんが考えています...</p></div><div id="response" class="text-gray-700 leading-relaxed whitespace-pre-wrap"></div></section></div>
+        </section>
+
+        <!-- Store Section -->
+        <section id="store" class="content-section">
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h2 class="font-mochiy text-3xl text-gray-800 mb-6 border-b-4 border-[#f59e0b] pb-2">キット購入</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://placehold.co/500x500/f0eada/6B8E23?text=米米部\n栽培キット" alt="米米部栽培キット" class="rounded-lg shadow-md">
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="font-mochiy text-2xl">米米部 栽培キット</h3>
+                        <p class="text-gray-600">おうちでカンタンにお米作りが始められる、必要なものがすべてそろった栽培キットです。</p>
+                        <div>
+                            <p class="font-bold">＜キットの中身＞</p>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li>オリジナルプランター</li>
+                                <li>栽培用の土</li>
+                                <li>育てるお米の種もみ</li>
+                                <li>栽培マニュアル「米米部の手引き」</li>
+                                <li>観察日記ノート</li>
+                            </ul>
+                        </div>
+                        <div class="text-3xl font-bold text-red-600">
+                            3,000円 <span class="text-lg font-normal text-gray-700">(税込)</span>
+                        </div>
+                        <button class="w-full bg-[#f59e0b] text-white font-bold py-3 px-4 rounded-lg hover:bg-[#d97706] transition-transform transform hover:scale-105">カートに入れる</button>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-gray-200">
+                    <h3 class="font-mochiy text-2xl text-gray-700 mb-4 text-center">スマホに米米部をインストール！</h3>
+                    <p class="text-gray-500 mb-6 text-center">このサイトをスマホのホーム画面に追加すると、<br>アプリみたいにいつでも見れるよ！</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-4 rounded-lg border">
+                            <h4 class="font-bold text-lg mb-2">iPhone (Safari)の場合</h4>
+                            <ol class="list-decimal list-inside space-y-1 text-sm">
+                                <li>下のメニューバーにある<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>「共有」アイコンをタップ。</li>
+                                <li>メニューをスクロールして「ホーム画面に追加」を選ぶ。</li>
+                                <li>「追加」を押したら完了！</li>
+                            </ol>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg border">
+                            <h4 class="font-bold text-lg mb-2">Android (Chrome)の場合</h4>
+                             <ol class="list-decimal list-inside space-y-1 text-sm">
+                                <li>右上の<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20" fill="currentColor"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" /></svg>「メニュー」アイコンをタップ。</li>
+                                <li>メニューの中から「ホーム画面に追加」を選ぶ。</li>
+                                <li>「追加」を押したら完了！</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- Share Modal -->
+    <div id="shareModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden"><div class="bg-white rounded-lg p-6 max-w-lg w-full"><h3 class="font-mochiy text-xl mb-4">日記をシェアしよう！</h3><p class="text-sm text-gray-600 mb-2">下のテキストをコピーして、SNSやメッセージアプリに貼り付けてね。</p><textarea id="shareText" rows="10" class="w-full p-2 border rounded-md bg-gray-100"></textarea><div class="mt-4 flex justify-end space-x-2"><button id="copyShareButton" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">コピーする</button><button id="closeShareModal" class="bg-gray-300 text-gray-800 py-2 px-4 rounded-lg hover:bg-gray-400">とじる</button></div></div></div>
+
+    <script>
+        // --- Main Page Navigation ---
+        const navButtons = document.querySelectorAll('.main-nav-button');
+        const contentSections = document.querySelectorAll('.content-section');
+        navButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                navButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const targetId = button.getAttribute('data-target');
+                contentSections.forEach(section => {
+                    section.id === targetId ? section.classList.add('active') : section.classList.remove('active');
+                });
+            });
+        });
+
+        // --- AI Helpdesk Logic ---
+        const aiButtons = { ask: document.getElementById('askButton'), name: document.getElementById('nameButton'), recipe: document.getElementById('recipeButton'), haiku: document.getElementById('haikuButton'), };
+        const questionInput = document.getElementById('question');
+        const responseSection = document.getElementById('responseSection');
+        const loader = document.getElementById('loader');
+        const responseDiv = document.getElementById('response');
+        const responseTitle = document.getElementById('responseTitle');
+        const aiTabs = { help: document.getElementById('ai-tab-help'), name: document.getElementById('ai-tab-name'), recipe: document.getElementById('ai-tab-recipe'), haiku: document.getElementById('ai-tab-haiku'), };
+        const aiContents = { help: document.getElementById('ai-content-help'), name: document.getElementById('ai-content-name'), recipe: document.getElementById('ai-content-recipe'), haiku: document.getElementById('ai-content-haiku'), };
+
+        Object.keys(aiTabs).forEach(key => {
+            aiTabs[key].addEventListener('click', () => {
+                Object.values(aiTabs).forEach(t => t.classList.remove('active'));
+                Object.values(aiContents).forEach(c => c.classList.remove('active')); // Use 'active' class
+                aiTabs[key].classList.add('active');
+                aiContents[key].classList.add('active');
+                responseSection.classList.add('hidden');
+            });
+        });
+
+        const aiTabStyle = document.createElement('style');
+        aiTabStyle.textContent = `
+            .ai-tab-button { padding: 8px 16px; cursor: pointer; border-bottom: 3px solid transparent; font-weight: bold; color: #6b7280; }
+            .ai-tab-button.active { color: #6B8E23; border-bottom-color: #6B8E23; }
+            .ai-tab-button:hover { color: #6B8E23; }
+            .ai-tab-content { display: none; }
+            .ai-tab-content.active { display: block; }
+        `;
+        aiContents.help.classList.add('active');
+        document.head.append(aiTabStyle);
+        
+        async function callGemini(systemPrompt, userMessage = "") {
+            responseSection.classList.remove('hidden');
+            responseDiv.textContent = '';
+            loader.classList.remove('hidden');
+            try {
+                const payload = { contents: [{ role: "user", parts: [{ text: `${systemPrompt}\n\n${userMessage}` }] }] };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                const apiResponse = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                if (!apiResponse.ok) throw new Error(`API request failed: ${apiResponse.status}`);
+                const result = await apiResponse.json();
+                let text = 'ごめんなさい、うまく答えが見つからなかったみたい。';
+                if (result.candidates?.[0]?.content?.parts?.[0]?.text) { text = result.candidates[0].content.parts[0].text; }
+                displayResponse(text);
+            } catch (error) {
+                console.error("Error:", error);
+                displayResponse('ごめんなさい、通信中にエラーが起きちゃったみたい。');
+            }
+        }
+
+        function displayResponse(text) {
+            loader.classList.add('hidden');
+            responseDiv.innerHTML = text.replace(/\n/g, '<br>');
+        }
+        
+        aiButtons.ask.addEventListener('click', () => {
+            const question = questionInput.value.trim();
+            if (!question) { alert('質問をにゅうりょくしてね！'); return; }
+            responseTitle.textContent = "コメットさんからのアドバイス";
+            const systemPrompt = `あなたは「コメットさん」という、お米作りの専門家です。日本の家庭用お米栽培キット「米米部」のAIアシスタントです。あなたの役割は、ユーザーからの質問に答えることです。以下のルールを必ず守ってください。1. **わかりやすさ:** 回答は、小中学生にもわかるように、箇条書き（例： 1. 〇〇、2. △△）などを使って、順序だてて、簡単にていねいに説明してください。2. **トーン:** 常にポジティブで、子どもたちを応援するような、親しみやすい励ましのトーンで話してください。3. **前提条件:** 回答は、ユーザーが「米米部」のキット（プランター、専用の土など）を使ってベランダや室内で育てていることを前提としてください。4. **人間への誘導:** もし、ユーザーの質問に「担当者」「中の人」「詳しい人」「スタッフ」といった言葉が含まれていたり、「直接聞きたい」「電話したい」「会って話したい」といった、人間への問い合わせを示唆する内容があった場合は、「ごめんね、その質問はAIのコメットさんには答えられないんだ。詳しい米米部の担当者さんに聞いてみてね！」と伝えた上で、こちらの連絡先メールアドレスに連絡するように、やさしく案内してください: g2424037@cc.kyoto-su.ac.jp。この時、他の栽培に関するアドバイスはしないでください。`;
+            callGemini(systemPrompt, `質問：${question}`);
+        });
+        aiButtons.name.addEventListener('click', () => { responseTitle.textContent = "すてきな名前のプレゼント！"; const systemPrompt = `あなたは「コメットさん」という、子どもの想像力を引き出すのが得意な、お米の妖精です。ユーザーが大切に育てている稲（いね）に、愛着がわくような素敵な名前を3つ提案してください。元気が出る名前、かわいい名前、ちょっと面白い名前など、バリエーション豊かに考えてね。それぞれの名前に、簡単な理由も添えてあげてね。子どもが喜ぶように、フレンドリーな言葉で話してください。`; callGemini(systemPrompt); });
+        aiButtons.recipe.addEventListener('click', () => { responseTitle.textContent = "とっておき！お米レシピ"; const systemPrompt = `あなたは「コメットさん」という、料理上手なお米の妖精です。ユーザーが家庭で育てて収穫した、とれたての新米を最高に美味しく食べるためのオリジナルレシピを1つ提案してください。レシピは、親子で一緒に楽しく作れるような、簡単で分かりやすい工程にしてください。「自分で作ったお米だから、もっとおいしいね！」という気持ちが伝わるような、楽しくて温かい言葉でレシピを紹介してください。`; callGemini(systemPrompt); });
+        aiButtons.haiku.addEventListener('click', () => { responseTitle.textContent = "思い出の一句"; const systemPrompt = `あなたは「コメットさん」という、俳句を詠むのが得意なお米の妖精です。ユーザーが「米米部」キットでお米を育て、ついに収穫を迎えた喜びや感動をテーマにしたオリジナルの俳句を3句、創作してください。季語は「稲刈り」や「新米」などを意識しつつも、子どもにも情景が浮かぶような、やさしい言葉を選んでください。それぞれの句に、簡単な解説も添えてあげると親切です。`; callGemini(systemPrompt); });
+
+        // --- Observation Diary Logic ---
+        const diaryDate = document.getElementById('diaryDate');
+        const diaryPhoto = document.getElementById('diaryPhoto');
+        const diaryText = document.getElementById('diaryText');
+        const saveDiaryButton = document.getElementById('saveDiaryButton');
+        const diaryDisplay = document.getElementById('diaryDisplay');
+        const shareDiaryButton = document.getElementById('shareDiaryButton');
+        const shareModal = document.getElementById('shareModal');
+        const closeShareModal = document.getElementById('closeShareModal');
+        const copyShareButton = document.getElementById('copyShareButton');
+        const shareText = document.getElementById('shareText');
+        let diaryEntries = [];
+
+        function loadDiary() {
+            const savedDiary = localStorage.getItem('komekomebuDiary');
+            if (savedDiary) { diaryEntries = JSON.parse(savedDiary); renderDiary(); }
+            diaryDate.valueAsDate = new Date();
+        }
+
+        function renderDiary() {
+            diaryDisplay.innerHTML = '';
+            if (diaryEntries.length === 0) { diaryDisplay.innerHTML = `<p class="text-gray-500 text-center">まだ日記がありません。<br>最初の記録をつけてみよう！</p>`; return; }
+            [...diaryEntries].reverse().forEach(entry => {
+                const entryDiv = document.createElement('div');
+                entryDiv.className = 'p-4 rounded-lg bg-gray-50 border border-gray-200';
+                entryDiv.innerHTML = `<p class="font-bold text-gray-800">${entry.date}</p>${entry.photoData ? `<img src="${entry.photoData}" alt="観察写真" class="rounded-md my-2 max-h-40 mx-auto">` : ''}<p class="text-gray-600 whitespace-pre-wrap">${entry.text}</p><button class="delete-button text-xs text-red-500 hover:underline mt-2" data-id="${entry.id}">削除</button>`;
+                diaryDisplay.appendChild(entryDiv);
+            });
+            document.querySelectorAll('.delete-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const idToDelete = e.target.getAttribute('data-id');
+                    diaryEntries = diaryEntries.filter(entry => entry.id != idToDelete);
+                    saveDiary();
+                    renderDiary();
+                });
+            });
+        }
+
+        function saveDiary() { localStorage.setItem('komekomebuDiary', JSON.stringify(diaryEntries)); }
+
+        saveDiaryButton.addEventListener('click', () => {
+            const date = diaryDate.value;
+            const text = diaryText.value.trim();
+            const photoFile = diaryPhoto.files[0];
+            if (!date || !text) { alert('日付と記録を両方入力してください。'); return; }
+            const newEntry = { id: Date.now(), date: date, text: text, photoData: null };
+            if (photoFile) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    newEntry.photoData = e.target.result;
+                    diaryEntries.push(newEntry);
+                    saveDiary();
+                    renderDiary();
+                    clearDiaryForm();
+                };
+                reader.readAsDataURL(photoFile);
+            } else {
+                diaryEntries.push(newEntry);
+                saveDiary();
+                renderDiary();
+                clearDiaryForm();
+            }
+        });
+
+        function clearDiaryForm() {
+            diaryText.value = '';
+            diaryPhoto.value = '';
+            diaryDate.valueAsDate = new Date();
+        }
+
+        shareDiaryButton.addEventListener('click', () => {
+            let shareContent = '【米米部 観察日記】\n\n';
+            if (diaryEntries.length === 0) { shareContent += "まだ日記がありません。"; } 
+            else {
+                 [...diaryEntries].forEach(entry => {
+                    shareContent += `--------------\n【日付】 ${entry.date}\n【観察記録】\n${entry.text}\n\n`;
+                });
+            }
+            shareText.value = shareContent;
+            shareModal.classList.remove('hidden');
+        });
+
+        closeShareModal.addEventListener('click', () => { shareModal.classList.add('hidden'); });
+        copyShareButton.addEventListener('click', () => {
+            shareText.select();
+            document.execCommand('copy');
+            copyShareButton.textContent = 'コピーしました！';
+            setTimeout(() => { copyShareButton.textContent = 'コピーする'; }, 2000);
+        });
+        
+        loadDiary();
+    </script>
+</body>
+</html>
